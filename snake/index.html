@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>贪吃蛇</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <header class="panel">
+      <h1>贪吃蛇小游戏</h1>
+      <p class="description">
+        使用<span>方向键</span>或<span>WASD</span>来控制蛇移动，按<span>空格</span>暂停或继续游戏。
+      </p>
+      <div class="scoreboard">
+        <div>得分：<span id="score">0</span></div>
+        <div>最高分：<span id="high-score">0</span></div>
+        <div class="speed-control">
+          <label for="speed">速度：</label>
+          <select id="speed">
+            <option value="140">悠闲</option>
+            <option value="110" selected>标准</option>
+            <option value="80">迅捷</option>
+            <option value="60">疯狂</option>
+          </select>
+        </div>
+      </div>
+      <button id="restart" class="primary">重新开始</button>
+    </header>
+
+    <section class="board-wrapper">
+      <canvas id="board" width="480" height="480" aria-label="贪吃蛇棋盘" role="img"></canvas>
+      <div id="message" class="message hidden" role="status" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>
+      小贴士：不要在蛇移动到相反方向时立即按反方向，否则蛇会与自己相撞。
+      合理利用暂停功能，规划下一步行动！
+    </p>
+  </footer>
+
+  <script src="game.js"></script>
+</body>
+</html>
